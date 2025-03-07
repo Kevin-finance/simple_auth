@@ -87,7 +87,7 @@ async def clerk_auth_middleware(request: Request, call_next):
     # Fetch full user details including metadata
     user = clerk.users.get(user_id=user_id)
 
-    if user.public_metadata.get("isCustomer"):
+    if user.public_metadata.get("isCustomer"): 
         # Continue processing the request if authentication and authorization succeeded.
         response = await call_next(request)
         return response
